@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers27</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Bookers</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <% if user_signed_in? %>
+        <li class="active"><a href="#">Home</a></li>
+        <li class=''><%= link_to "About", home_about_path %>
+        </li>
+        <li class=''><%= link_to "sign up", new_user_registration_path %>
+        </li> 
+        <li class=''> <%= link_to "log in", new_user_session_path %>
+        </li>
+      <% else %>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">User</a></li>
+        <li><a href="#">Books</a></li> 
+        <li><a href="#">log out</a></li>
+        
+      <% end %>
+    </ul>
+      </div>
+    </nav>
+  
+  <body>
+    <%= yield %>
+  </body>
+</html>
+
+
+
+
+
+
